@@ -1,0 +1,78 @@
+/* Header styles */
+.page-header {
+  width: 100%;
+  background-color: #bed3c4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  font-family: "Funnel Display", sans-serif;
+  box-sizing: border-box;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-image {
+  height: 50px;
+  width: auto;
+  border-radius: 8px;
+}
+
+.site-title {
+  font-weight: 700;
+  color: green;
+  font-size: 1.75rem;
+  margin: 0;
+}
+
+.header-nav {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.header-nav a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: "Funnel Display", sans-serif;
+}
+
+.header-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .site-title {
+    font-size: 1.4rem;
+  }
+
+  .header-nav a {
+    font-size: 0.95rem;
+  }
+
+  .logo-image {
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-title {
+    font-size: 1.2rem;
+  }
+
+  .header-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .header-nav a {
+    font-size: 0.9rem;
+  }
+}
