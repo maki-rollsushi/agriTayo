@@ -61,8 +61,8 @@ This project is built using:
    ```
 
 4. **Visit in your browser:**
+   ```bash
+   http://localhost:5173/
+   ```
 
----
-
-Make sure your image assets (like `bg_about.jpg`) and `farmerData.js` are correctly placed under `/src/assets` and `/src/data`, respectively.
 
