@@ -16,6 +16,7 @@ function Header() {
         <h1 className="site-title">agriTayo</h1>
       </div>
       <nav className="header-nav">
+        <a href='/'>Home</a>
         <a href="#about">About Us</a>
         <a href="#contact">Contact Us</a>
       </nav>
