@@ -42,8 +42,7 @@ This project is built using:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/agriTayo.git
-   cd agriTayo
+   git clone https://github.com/maki-rollsushi/STARTer-Repo.git
    ```
 
 2. **Install dependencies:**
