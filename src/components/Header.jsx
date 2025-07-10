@@ -1,6 +1,6 @@
 // components/Header.jsx
 import React from 'react';
-import '../Header.css'; // Ensure this CSS file is created (or use index.css if you prefer)
+import '../styles/Header.css'; 
 
 function Header() {
   return (
@@ -8,18 +8,24 @@ function Header() {
       <div className="logo-title">
         <a href="/">
           <img
-            src="https://thumbs.dreamstime.com/z/simple-stylish-modern-logo-illustration-house-vector-hand-drawn-element-simple-stylish-modern-logo-illustration-114230332.jpg?ct=jpeg"
+            src="src/assets/logo.png"
             alt="Logo"
             className="logo-image"
           />
         </a>
-        <h1 className="site-title">agriTayo</h1>
+        <h1 className="site-title"> agri<span className='yellow'>Tayo</span>!</h1>
       </div>
       <nav className="header-nav">
-        <a href='/'>Home</a>
-        <a href="#about">About Us</a>
-        <a href="#contact">Contact Us</a>
+        <a href="/#about"><i className="fa-solid fa-circle-info"></i> <span className='nav-label'>ABOUT</span></a>
+        <a href="/#marketplace"><i className="fa-solid fa-shop"></i><span className='nav-label'>SHOP</span></a>
+        <a href="/TBPlanted"><i className="fa-solid fa-person-circle-question"></i> <span className='nav-label'>HELP</span></a>
+        {/* <button className="cart-button">
+          <i className="fa-solid fa-cart-shopping"></i>
+          <span className='nav-label'>CART</span>   
+          <span className="cart-bubble">3</span> 
+        </button> */}
       </nav>
+
     </header>
   );
 }
