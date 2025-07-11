@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function ProductCard({ product, farmer }) {
   return (
     <Link
-      to={`/pre-order/${product.name}`}
+      to={`/pre-order/${product.productId}`}
       state={{ product, farmer }}
       className="product-card"
     >
@@ -19,7 +19,7 @@ function ProductCard({ product, farmer }) {
       <div className="product-info">
         <h3 className="product-name">{product.name}</h3>
         <p className="product-variety">Variety: {product.variety}</p>
-        <p className="product-price">₱{product.pricePerKg}/kg</p>
+        <p className="product-price"><strong>₱{product.pricePerKg}</strong>/kg</p>
       </div>
     </Link>
   );

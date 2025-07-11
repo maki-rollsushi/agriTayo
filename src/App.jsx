@@ -2,9 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
+import TBPlanted from './pages/TBPlanted';
 import PreOrderFormPage from './pages/PreOrderFormPage';
-import ContactSupportPage from './pages/ContactSupportPage';
-import MyOrdersPage from './pages/MyOrdersPage';
 
 function App() {
   return (
@@ -13,8 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/pre-order/:productId" element={<PreOrderFormPage />} />
-          <Route path="/contact" element={<ContactSupportPage />} />
-          <Route path="/orders" element={<MyOrdersPage />} />
+          <Route path="/TBPlanted" element={<TBPlanted/>} />
         </Routes>
       <Footer/>
     </Router>

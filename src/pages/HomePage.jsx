@@ -3,6 +3,9 @@ import Header from '../components/Header';
 import FarmerSidebar from '../components/FarmerSidebar';
 import ProductCard from '../components/ProductCard';
 import { farmerData } from '../data/farmerData';
+import Hero from '../components/Hero'
+import About from '../components/About';
+
 
 function HomePage() {
   const [selectedFarmer, setSelectedFarmer] = useState(farmerData[0]);
@@ -38,73 +41,49 @@ function HomePage() {
   };
 
   return (
-    <div>
-        <section id="about" className="about-section">
-            <h1 className="about-title">About</h1>
-            <p className="about-description">
-                agriTayo connects consumers directly with farmers by enabling 
-                pre-orders of fresh produce. Our platform supports local agriculture, 
-                reduces waste, and helps build a more sustainable food system for everyone. 
-                By working closely with local farmers, we ensure high-quality, seasonal 
-                harvests while empowering communities and promoting food transparency.
-            </p>
+    <div className='fullpage-wrapper'>
+        <section id='hero'>
+          <Hero/>
+        </section>
 
-            <div className="about-icons">
-                <div className="icon-block">
-                    <i className="fa-solid fa-seedling"></i>
-                    <p>Pre-order Vegetables</p>
-                </div>
-                <div className="icon-block">
-                    <i className="fa-solid fa-hand-holding-droplet"></i>
-                    <p>Support Farmer Capital</p>
-                </div>
-                <div className="icon-block">
-                    <i className="fa-solid fa-hand-holding-dollar"></i>
-                    <p>Price Stability</p>
-                </div>
-            </div>
-
+        <section id='about'>
+          <About/>
         </section>
 
       <section id="marketplace" className="marketplace-section">
-        <div className="market-title">
-          <button
-            onClick={() =>
-              document.getElementById('marketplace')?.scrollIntoView({ behavior: 'smooth' })
-            }
-            className="scroll-btn"
-          >
-            <h2 className="marketplace-title">Pre-Order Now</h2>
-          </button>
+        <div className="m-title">
+          <div className="sidebar-toggle-placeholder">
+            {isToggleVisible && !isSidebarOpen ? (
+              <button className="toggle-sidebar-btn" onClick={handleShowSidebar}>
+                <i className="fa-solid fa-bars"></i>
+              </button>
+            ) : (
+              <div className="toggle-placeholder" /> // empty div to reserve space
+            )}
+          </div>
+          <h1>Product Catalog</h1>
         </div>
 
-        {/* Toggle button */}
-        {isToggleVisible && !isSidebarOpen && (
-          <button className="toggle-sidebar-btn" onClick={handleShowSidebar}>
-            Show Farmers
-          </button>
-        )}
-
-        {/* Overlay */}
-        {isSidebarOpen && <div className="sidebar-overlay" onClick={handleCloseSidebar} />}
-
+      {isSidebarOpen && <div className="sidebar-overlay" onClick={handleCloseSidebar} />}
+      
         <div className="marketplace-content">
           <div className={`sidebar-wrapper responsive-sidebar ${isSidebarOpen ? 'open' : ''}`}>
             {!isToggleVisible && <button className="close-sidebar" onClick={handleCloseSidebar}>×</button>}
             <FarmerSidebar
-              farmers={farmerData}
-              selectedFarmer={selectedFarmer}
-              setSelectedFarmer={handleFarmerSelect}
+            farmers={farmerData}
+            selectedFarmer={selectedFarmer}
+            setSelectedFarmer={handleFarmerSelect}
             />
           </div>
-
-          <div className="product-grid">
-            {selectedFarmer.products.map((product, idx) => (
-              <ProductCard key={idx} product={product} farmer={selectedFarmer} />
-            ))}
+          <div className='product-scroll-area'>
+              <div className="product-grid">
+                {selectedFarmer.products.map((product, idx) => (
+                <ProductCard key={idx} product={product} farmer={selectedFarmer} />
+                ))}
+              </div>
           </div>
         </div>
-      </section>
+      </section> 
     </div>
   );
 }

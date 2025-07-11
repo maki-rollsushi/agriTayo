@@ -1,6 +1,8 @@
 import { useState } from 'react';
 
-function PreOrderForm({ productId, onSubmit }) {
+import '../styles/preOrder.css';
+
+function PreOrderCard({ productId, onSubmit }) {
   const [formData, setFormData] = useState({
     name: '',
     contact: '',
@@ -11,6 +13,8 @@ function PreOrderForm({ productId, onSubmit }) {
     agree: false,
     signature: '',
   });
+
+  const [showOverlay, setShowOverlay] = useState(false);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -27,7 +31,27 @@ function PreOrderForm({ productId, onSubmit }) {
       return;
     }
     onSubmit({ productId, ...formData });
+    setShowOverlay(true);
   };
+    const handleOrderAgain = () => {
+        setFormData({
+        name: '',
+        contact: '',
+        email: '',
+        quantity: '',
+        date: '',
+        address: '',
+        signature: '',
+        agree: false,
+        });
+        setShowOverlay(false);
+    };
+    const handleOverlayClick = (e) => {
+        if (e.target.classList.contains('success-overlay')) {
+            setShowOverlay(false);
+        }
+        };
+
 
   return (
     <form className="preorder-form" onSubmit={handleSubmit}>
@@ -127,12 +151,34 @@ function PreOrderForm({ productId, onSubmit }) {
           I understand this is a pre-order and agree to the estimated delivery window.
         </label>
       </div>
-
       <button type="submit" className="submit-btn preorder-form-full">
         Submit Order
       </button>
+
+    {showOverlay && (
+    <div className="success-overlay" onClick={handleOverlayClick}>
+        <div className="success-overlay-content">
+        <button
+            className="success-overlay-close-btn"
+            onClick={() => setShowOverlay(false)}
+        >
+            &times;
+        </button>
+        <div className='overlay-text'>
+            <h2 className='overlay-title'>Seed Planted <i class="fa-solid fa-seedling"></i></h2>
+            <p> Thank you for supporting local farmers. We've sent your order details 
+                to your email. You will hear from us 1-2 weeks before your 
+                delivery date with an update on your order's status.
+            </p>
+        </div>
+        <button className="success-overlay-order-again-btn" onClick={handleOrderAgain}>
+            Order Again
+        </button>
+        </div>
+    </div>
+    )}
     </form>
   );
 }
 
-export default PreOrderForm;
+export default PreOrderCard;

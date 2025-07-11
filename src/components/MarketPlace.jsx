@@ -1,5 +1,7 @@
 import FarmerSidebar from '../components/FarmerSidebar';
 import ProductCard from '../components/ProductCard';
+import '../styles/Marketplace.css'
+import '../styles/FarmerSidebar.css'
 
 const products = [
   { id: 1, name: 'Mango', icon: '🥭' },
