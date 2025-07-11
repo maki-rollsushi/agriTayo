@@ -229,15 +229,25 @@ h1, h2, h3, h4, h5, h6, p, button{
   text-align: left;
   background-color: #fdfef6;
   min-height: 100vh;
-  padding: 40px 20px;
   width: 100%;
+  margin-top: 2rem;
+}
+
+.return-a {
+  padding: 2rem;
+  font-style: italic;
+  color: #f9b536;
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-decoration: none;
 }
 
 .pre-order-title {
-  color: #2b5f2e;
-  margin-bottom: 20px;
-  font-size: 3rem;
-  margin: 1rem;
+  color: #fdfef6;
+  padding: 0.5rem;
+  font-size: 2.5rem;
+  background-color: #2b5f2e;
+  width: 100%;
 }
 
 .detail-card {
@@ -391,11 +401,10 @@ h1, h2, h3, h4, h5, h6, p, button{
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
-  width: 90%;
-  margin: 1rem;
   background-color: white;
   padding: 1rem;
-  border-radius: 12px;
+  margin: 1rem;
+  border-radius: 20px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
@@ -410,7 +419,7 @@ h1, h2, h3, h4, h5, h6, p, button{
 }
 
 .form-label {
-  font-weight: 500;
+  font-weight: 700;
   color: #2b5f2e;
   margin-bottom: 4px;
 }
@@ -436,27 +445,46 @@ h1, h2, h3, h4, h5, h6, p, button{
 
 .checkbox-container {
   display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 14px;
+  flex-direction: row;       /* ✅ Lay children side by side */
+  align-items: flex-start;   /* ✅ Align checkbox with top of label */
+  gap: 10px;                 /* ✅ Space between checkbox and label */
+  font-size: 1.1rem;
+  font-weight: 600;
   color: #2b5f2e;
+  line-height: 1.4;
 }
 
+
+.checkbox-container label{
+  display: inline;
+  max-width: 70%;
+}
+
+
+
+
+.but-wrap {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+
 .submit-btn {
-  background-color: #f9b534;
+  background-color: #fdfef6;
   color: #2b5f2e;
   font-weight: bold;
-  padding: 12px 20px;
-  border: none;
+  padding: 0.5rem;
+  border: 3px solid #2b5f2e;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  font-size: 16px;
+  font-size: 1.5rem;
+  margin: 0.5rem auto;
+  width: 70%;
+  display: block;       /* 👈 required for margin auto to work */
 }
 
-.submit-btn:hover {
-  background-color: #e0a82e;
-}
 
 /* to be planted */
 .to-be-planted {

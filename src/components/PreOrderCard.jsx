@@ -139,7 +139,8 @@ function PreOrderCard({ productId, onSubmit }) {
         />
       </div>
 
-      <div className="checkbox-container preorder-form-full">
+      <div className="checkbox-container">
+        <div>
         <input
           type="checkbox"
           id="agree"
@@ -147,13 +148,18 @@ function PreOrderCard({ productId, onSubmit }) {
           checked={formData.agree}
           onChange={handleChange}
         />
-        <label htmlFor="agree">
+        </div>
+        <div>
+          <label htmlFor="agree">
           I understand this is a pre-order and agree to the estimated delivery window.
         </label>
+        </div>
       </div>
-      <button type="submit" className="submit-btn preorder-form-full">
-        Submit Order
-      </button>
+      <div className='but-wwrap'>
+              <button type="submit" className="submit-btn preorder-form-full">
+                PLACE PRE-ORDER
+              </button>
+      </div>
 
     {showOverlay && (
     <div className="success-overlay" onClick={handleOverlayClick}>
