@@ -145,7 +145,10 @@
   .vid-bg {
     height: 450px;
   }
+.about-section {
+  min-height: 70vh; 
 
+}
   .about-title {
     font-size: 2rem;
   }
