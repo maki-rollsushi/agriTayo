@@ -4,10 +4,12 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import TBPlanted from './pages/TBPlanted';
 import PreOrderFormPage from './pages/PreOrderFormPage';
+import ScrollToHash from './components/ScrollToHash';
 
 function App() {
   return (
     <Router>
+      <ScrollToHash />
       <Header />     
         <Routes>
           <Route path="/" element={<HomePage />} />

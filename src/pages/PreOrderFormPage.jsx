@@ -1,5 +1,5 @@
     // pages/PreOrderFormPage.jsx
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { useParams, useLocation } from 'react-router-dom';
 
@@ -10,6 +10,11 @@ function PreOrderFormPage() {
     const location = useLocation();
 
     const { product, farmer } = location.state || {};
+
+    useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    }, []);
+
 
     if (!product || !farmer) {
         return <div className="form-container">Product not found or missing data.</div>;

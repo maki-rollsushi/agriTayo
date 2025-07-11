@@ -245,7 +245,7 @@ h1, h2, h3, h4, h5, h6, p, button{
 .pre-order-title {
   color: #fdfef6;
   padding: 0.5rem;
-  font-size: 2.5rem;
+  font-size: 2rem;
   background-color: #2b5f2e;
   width: 100%;
 }
@@ -254,21 +254,22 @@ h1, h2, h3, h4, h5, h6, p, button{
   display: flex;
   flex-direction: row;
   background: #fdfef6;
-  border-radius: 12px;
   overflow: hidden;
-  width: 95%
+  width: auto;
+  margin: 1rem;
 }
 
 .form-container img{
   border-radius: 20px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  height: auto;
-  width: 400px;
+  height: 360px;
+  width:360px;
 }
 .product-image-side {
   object-fit: cover;
   border-radius: 5px;
-  padding: 1rem;
+  padding: 0.5rem;
+  background-color: #f9b536;
   margin: 1rem;
 }
 
@@ -280,9 +281,9 @@ h1, h2, h3, h4, h5, h6, p, button{
 }
 
 .product-title {
-  font-size: 3rem;
+  font-size: 2rem;
   color: #2b5f2e;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
 }
 
 .divider-line {
@@ -295,14 +296,15 @@ h1, h2, h3, h4, h5, h6, p, button{
 .farmer-price {
   display: flex;
   flex-direction: row;
-  width: 100%;
   align-items: center;
   justify-content: space-between;
+  margin: -1.5rem 0;
+  padding: 0;
 }
 
 .detail-price {
   text-align: right;  
-  font-size: 1.7rem;
+  font-size: 2rem;
   font-weight: bold;
   color: #2b5f2e;
 }
@@ -321,7 +323,6 @@ h1, h2, h3, h4, h5, h6, p, button{
 
 .product-farmer span {
   color:#2b5f2e;
-  font-size: 1.5rem;
 }
 
 .product-description {
