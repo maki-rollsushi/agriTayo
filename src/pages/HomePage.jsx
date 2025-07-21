@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Header from '../components/Header';
 import FarmerSidebar from '../components/FarmerSidebar';
 import ProductCard from '../components/ProductCard';
 import { farmerData } from '../data/farmerData';

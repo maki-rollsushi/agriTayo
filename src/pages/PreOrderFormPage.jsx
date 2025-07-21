@@ -22,6 +22,7 @@ function PreOrderFormPage() {
 
     const handleOrderSubmit = (data) => {
         console.log('Order submitted:', data);
+        //FUTURE CODE FOR SENDING DATA OF BUYERS
     };
 
 
