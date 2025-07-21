@@ -21,7 +21,6 @@ The goal of agriTayo is to:
 This project is built using:
 
 - **React** – Frontend library
-- **React Router DOM** – For routing between pages
 
 ### 🗃 File Highlights
 
