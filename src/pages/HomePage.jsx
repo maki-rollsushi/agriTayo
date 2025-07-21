@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import FarmerSidebar from '../components/FarmerSidebar';
-import ProductCard from '../components/ProductCard';
-import { farmerData } from '../data/farmerData';
-import Hero from '../components/Hero'
-import About from '../components/About';
-
+import React, { useState, useEffect } from "react";
+import FarmerSidebar from "../components/FarmerSidebar";
+import ProductCard from "../components/ProductCard";
+import { farmerData } from "../data/farmerData";
+import Hero from "../components/Hero";
+import About from "../components/About";
 
 function HomePage() {
   const [selectedFarmer, setSelectedFarmer] = useState(farmerData[0]);
@@ -23,15 +22,13 @@ function HomePage() {
     setIsToggleVisible(false);
   };
 
-
   useEffect(() => {
     if (isSidebarOpen) {
-      document.body.classList.add('sidebar-open');
+      document.body.classList.add("sidebar-open");
     } else {
-      document.body.classList.remove('sidebar-open');
+      document.body.classList.remove("sidebar-open");
     }
   }, [isSidebarOpen]);
-
 
   const handleFarmerSelect = (farmer) => {
     setSelectedFarmer(farmer);
@@ -40,20 +37,23 @@ function HomePage() {
   };
 
   return (
-    <div className='fullpage-wrapper'>
-        <section id='hero'>
-          <Hero/>
-        </section>
+    <div className="fullpage-wrapper">
+      <section id="hero">
+        <Hero />
+      </section>
 
-        <section id='about'>
-          <About/>
-        </section>
+      <section id="about">
+        <About />
+      </section>
 
       <section id="marketplace" className="marketplace-section">
         <div className="m-title">
           <div className="sidebar-toggle-placeholder">
             {isToggleVisible && !isSidebarOpen ? (
-              <button className="toggle-sidebar-btn" onClick={handleShowSidebar}>
+              <button
+                className="toggle-sidebar-btn"
+                onClick={handleShowSidebar}
+              >
                 <i className="fa-solid fa-bars"></i>
               </button>
             ) : (
@@ -63,26 +63,40 @@ function HomePage() {
           <h1>Product Catalog</h1>
         </div>
 
-      {isSidebarOpen && <div className="sidebar-overlay" onClick={handleCloseSidebar} />}
-      
+        {isSidebarOpen && (
+          <div className="sidebar-overlay" onClick={handleCloseSidebar} />
+        )}
+
         <div className="marketplace-content">
-          <div className={`sidebar-wrapper responsive-sidebar ${isSidebarOpen ? 'open' : ''}`}>
-            {!isToggleVisible && <button className="close-sidebar" onClick={handleCloseSidebar}>×</button>}
+          <div
+            className={`sidebar-wrapper responsive-sidebar ${
+              isSidebarOpen ? "open" : ""
+            }`}
+          >
+            {!isToggleVisible && (
+              <button className="close-sidebar" onClick={handleCloseSidebar}>
+                ×
+              </button>
+            )}
             <FarmerSidebar
-            farmers={farmerData}
-            selectedFarmer={selectedFarmer}
-            setSelectedFarmer={handleFarmerSelect}
+              farmers={farmerData}
+              selectedFarmer={selectedFarmer}
+              setSelectedFarmer={handleFarmerSelect}
             />
           </div>
-          <div className='product-scroll-area'>
-              <div className="product-grid">
-                {selectedFarmer.products.map((product, idx) => (
-                <ProductCard key={idx} product={product} farmer={selectedFarmer} />
-                ))}
-              </div>
+          <div className="product-scroll-area">
+            <div className="product-grid">
+              {selectedFarmer.products.map((product, idx) => (
+                <ProductCard
+                  key={idx}
+                  product={product}
+                  farmer={selectedFarmer}
+                />
+              ))}
+            </div>
           </div>
         </div>
-      </section> 
+      </section>
     </div>
   );
 }

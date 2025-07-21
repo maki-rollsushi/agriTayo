@@ -1,17 +1,15 @@
-import { useState } from 'react';
-
-import '../styles/preOrder.css';
+import { useState } from "react";
 
 function PreOrderCard({ productId, onSubmit }) {
   const [formData, setFormData] = useState({
-    name: '',
-    contact: '',
-    email: '',
-    quantity: '',
-    date: '',
-    address: '',
+    name: "",
+    contact: "",
+    email: "",
+    quantity: "",
+    date: "",
+    address: "",
     agree: false,
-    signature: '',
+    signature: "",
   });
 
   const [showOverlay, setShowOverlay] = useState(false);
@@ -20,7 +18,7 @@ function PreOrderCard({ productId, onSubmit }) {
     const { name, value, type, checked } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value,
+      [name]: type === "checkbox" ? checked : value,
     }));
   };
 
@@ -33,30 +31,31 @@ function PreOrderCard({ productId, onSubmit }) {
     onSubmit({ productId, ...formData });
     setShowOverlay(true);
   };
-    const handleOrderAgain = () => {
-        setFormData({
-        name: '',
-        contact: '',
-        email: '',
-        quantity: '',
-        date: '',
-        address: '',
-        signature: '',
-        agree: false,
-        });
-        setShowOverlay(false);
-    };
-    const handleOverlayClick = (e) => {
-        if (e.target.classList.contains('success-overlay')) {
-            setShowOverlay(false);
-        }
-        };
-
+  const handleOrderAgain = () => {
+    setFormData({
+      name: "",
+      contact: "",
+      email: "",
+      quantity: "",
+      date: "",
+      address: "",
+      signature: "",
+      agree: false,
+    });
+    setShowOverlay(false);
+  };
+  const handleOverlayClick = (e) => {
+    if (e.target.classList.contains("success-overlay")) {
+      setShowOverlay(false);
+    }
+  };
 
   return (
     <form className="preorder-form" onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="name" className="form-label">Name or Company</label>
+        <label htmlFor="name" className="form-label">
+          Name or Company
+        </label>
         <input
           id="name"
           name="name"
@@ -68,7 +67,9 @@ function PreOrderCard({ productId, onSubmit }) {
       </div>
 
       <div>
-        <label htmlFor="contact" className="form-label">Contact Number</label>
+        <label htmlFor="contact" className="form-label">
+          Contact Number
+        </label>
         <input
           id="contact"
           name="contact"
@@ -80,7 +81,9 @@ function PreOrderCard({ productId, onSubmit }) {
       </div>
 
       <div>
-        <label htmlFor="email" className="form-label">Email Address</label>
+        <label htmlFor="email" className="form-label">
+          Email Address
+        </label>
         <input
           id="email"
           name="email"
@@ -92,7 +95,9 @@ function PreOrderCard({ productId, onSubmit }) {
       </div>
 
       <div>
-        <label htmlFor="quantity" className="form-label">Quantity (kg)</label>
+        <label htmlFor="quantity" className="form-label">
+          Quantity (kg)
+        </label>
         <input
           id="quantity"
           name="quantity"
@@ -104,7 +109,9 @@ function PreOrderCard({ productId, onSubmit }) {
       </div>
 
       <div>
-        <label htmlFor="date" className="form-label">Pick-Up Date</label>
+        <label htmlFor="date" className="form-label">
+          Pick-Up Date
+        </label>
         <input
           id="date"
           name="date"
@@ -116,11 +123,13 @@ function PreOrderCard({ productId, onSubmit }) {
       </div>
 
       <div className="preorder-form-full">
-        <label htmlFor="address" className="form-label">Delivery Address or Pickup Location</label>
+        <label htmlFor="address" className="form-label">
+          Delivery Address or Pickup Location
+        </label>
         <input
           id="address"
           name="address"
-          type='text'
+          type="text"
           value={formData.address}
           onChange={handleChange}
           required
@@ -128,11 +137,13 @@ function PreOrderCard({ productId, onSubmit }) {
       </div>
 
       <div className="preorder-form-full">
-        <label htmlFor="signature" className="form-label">Type Your Name as Signature</label>
+        <label htmlFor="signature" className="form-label">
+          Type Your Name as Signature
+        </label>
         <input
           id="signature"
           name="signature"
-          type='text'
+          type="text"
           value={formData.signature}
           onChange={handleChange}
           required
@@ -141,48 +152,56 @@ function PreOrderCard({ productId, onSubmit }) {
 
       <div className="checkbox-container">
         <div>
-        <input
-          type="checkbox"
-          id="agree"
-          name="agree"
-          checked={formData.agree}
-          onChange={handleChange}
-        />
+          <input
+            type="checkbox"
+            id="agree"
+            name="agree"
+            checked={formData.agree}
+            onChange={handleChange}
+          />
         </div>
         <div>
           <label htmlFor="agree">
-          I understand this is a pre-order and agree to the estimated delivery window.
-        </label>
+            I understand this is a pre-order and agree to the estimated delivery
+            window.
+          </label>
         </div>
       </div>
-      <div className='but-wwrap'>
-              <button type="submit" className="submit-btn preorder-form-full">
-                PLACE PRE-ORDER
-              </button>
+      <div className="but-wwrap">
+        <button type="submit" className="submit-btn preorder-form-full">
+          PLACE PRE-ORDER
+        </button>
       </div>
 
-    {showOverlay && (
-    <div className="success-overlay" onClick={handleOverlayClick}>
-        <div className="success-overlay-content">
-        <button
-            className="success-overlay-close-btn"
-            onClick={() => setShowOverlay(false)}
-        >
-            &times;
-        </button>
-        <div className='overlay-text'>
-            <h2 className='overlay-title'>Seed Planted <i class="fa-solid fa-seedling"></i></h2>
-            <p> Thank you for supporting local farmers. We've sent your order details 
-                to your email. You will hear from us 1-2 weeks before your 
-                delivery date with an update on your order's status.
-            </p>
+      {showOverlay && (
+        <div className="success-overlay" onClick={handleOverlayClick}>
+          <div className="success-overlay-content">
+            <button
+              className="success-overlay-close-btn"
+              onClick={() => setShowOverlay(false)}
+            >
+              &times;
+            </button>
+            <div className="overlay-text">
+              <h2 className="overlay-title">
+                Seed Planted <i class="fa-solid fa-seedling"></i>
+              </h2>
+              <p>
+                {" "}
+                Thank you for supporting local farmers. We've sent your order
+                details to your email. You will hear from us 1-2 weeks before
+                your delivery date with an update on your order's status.
+              </p>
+            </div>
+            <button
+              className="success-overlay-order-again-btn"
+              onClick={handleOrderAgain}
+            >
+              Order Again
+            </button>
+          </div>
         </div>
-        <button className="success-overlay-order-again-btn" onClick={handleOrderAgain}>
-            Order Again
-        </button>
-        </div>
-    </div>
-    )}
+      )}
     </form>
   );
 }

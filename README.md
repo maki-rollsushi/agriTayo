@@ -1,5 +1,4 @@
-# agriTayo 
-
+# agriTayo
 
 **agriTayo** is a React-based web application that connects consumers directly to local farmers by enabling pre-orders of fresh produce. Users can explore various farmers, view their available products, and place customized pre-orders with delivery or pickup options.
 
@@ -23,7 +22,6 @@ This project is built using:
 
 - **React** – Frontend library
 - **React Router DOM** – For routing between pages
-
 
 ### 🗃 File Highlights
 
@@ -61,5 +59,3 @@ This project is built using:
    ```bash
    http://localhost:5173/
    ```
-
-

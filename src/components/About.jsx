@@ -7,22 +7,34 @@ function About() {
     <div className="about-section">
       <div className="vid-bg">
         <video className="background-video" autoPlay loop muted playsInline>
-            <source src={bgVideo} type="video/mp4" />
-            Your browser does not support the video tag.
+          <source src={bgVideo} type="video/mp4" />
+          Your browser does not support the video tag.
         </video>
 
-
         <div className="video-content">
-          <h1 className="about-title">About <span className="white-bg">agri<span className="yellow">Tayo</span>!</span></h1>
+          <h1 className="about-title">
+            About{" "}
+            <span className="white-bg">
+              agri<span className="yellow">Tayo</span>!
+            </span>
+          </h1>
           <p>
-            A digital platform that connects Filipino farmers directly with consumers by enabling transparent and pre-ordered access to fresh produce.
+            A digital platform that connects Filipino farmers directly with
+            consumers by enabling transparent and pre-ordered access to fresh
+            produce.
           </p>
         </div>
       </div>
       <div className="about-b">
-        <button onClick={() =>
-					document.getElementById('marketplace')?.scrollIntoView({ behavior: 'smooth' })
-				}>Shop Now</button>
+        <button
+          onClick={() =>
+            document
+              .getElementById("marketplace")
+              ?.scrollIntoView({ behavior: "smooth" })
+          }
+        >
+          Shop Now
+        </button>
       </div>
 
       <div className="icon-holder">

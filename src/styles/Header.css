@@ -58,8 +58,6 @@
   transition: color 0.2s ease;
 }
 
-
-
 /* Cart Button */
 .header-nav button.cart-button {
   position: relative;
@@ -106,7 +104,6 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-
 .header-nav a:hover {
   text-decoration: underline;
 }
@@ -125,7 +122,6 @@
   font-weight: 500;
 }
 
-
 /* FOOTER */
 .page-footer {
   color: #fdfef6;
@@ -142,7 +138,6 @@
   font-weight: 700;
   font-size: 2.5rem;
   color: #fdfef6;
-
 }
 
 .soc-med-holder {
@@ -180,7 +175,7 @@
   color: #fdfef6;
   font-family: "Inter", sans-serif;
   white-space: nowrap; /* 🔒 Force to one line */
-  padding: 0;           /* remove default padding */
+  padding: 0; /* remove default padding */
 }
 
 .footer-tagline .yellow {
@@ -194,7 +189,7 @@
 }
 
 .footer-tagline .underline-yellow::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   bottom: -4px;

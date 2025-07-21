@@ -4,11 +4,11 @@
   max-width: 100%;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   height: 100%;
 }
-
 
 body {
   font-family: "Inter", sans-serif;
@@ -18,24 +18,29 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6, p, button{
-    color: #285e32;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+button {
+  color: #285e32;
 }
 
-.yellow{
-  color: #f5b831 !important; 
+.yellow {
+  color: #f5b831 !important;
 }
-
-
 
 .marketplace-section {
   color: #285e32;
   background-color: #fdfef6;
   font-family: "Inter", sans-serif;
-  justify-content: center; 
-  align-items: center;     
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  min-height: 100vh; 
+  min-height: 100vh;
   display: block;
   overflow: hidden;
 }
@@ -44,9 +49,8 @@ h1, h2, h3, h4, h5, h6, p, button{
   flex: 1;
   overflow-y: auto;
   padding: 2rem;
-  max-height: calc(100vh - 80px); 
+  max-height: calc(100vh - 80px);
 }
-
 
 .m-title {
   display: flex;
@@ -84,7 +88,6 @@ h1, h2, h3, h4, h5, h6, p, button{
   transform: scale(1.05);
 }
 
-
 .marketplace-content {
   display: flex;
   gap: 2rem;
@@ -92,7 +95,6 @@ h1, h2, h3, h4, h5, h6, p, button{
   overflow: hidden;
   height: calc(100vh - 80px);
 }
-
 
 /* ========== Sidebar ========== */
 .farmer-sidebar {
@@ -164,7 +166,7 @@ h1, h2, h3, h4, h5, h6, p, button{
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 2fr));
-  gap: 1rem;
+  gap: 1.5rem;
   flex: 1;
   justify-items: center;
 }
@@ -173,14 +175,16 @@ h1, h2, h3, h4, h5, h6, p, button{
 .product-card {
   display: block;
   background-color: #ffffff;
-  width: 210px;
+  width: 200px;
   border-radius: 8px;
   padding: 0.5rem;
   text-align: center;
   text-decoration: none;
   color: inherit;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .product-card:hover {
@@ -218,7 +222,6 @@ h1, h2, h3, h4, h5, h6, p, button{
   font-size: 2rem;
   padding: 0.2rem;
 }
-
 
 /* ===== Pre-Order form */
 
@@ -259,11 +262,11 @@ h1, h2, h3, h4, h5, h6, p, button{
   margin: 1rem;
 }
 
-.form-container img{
+.form-container img {
   border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   height: 360px;
-  width:360px;
+  width: 360px;
 }
 .product-image-side {
   object-fit: cover;
@@ -272,8 +275,6 @@ h1, h2, h3, h4, h5, h6, p, button{
   background-color: #f9b536;
   margin: 1rem;
 }
-
-
 
 .product-info-block {
   flex: 1;
@@ -303,7 +304,7 @@ h1, h2, h3, h4, h5, h6, p, button{
 }
 
 .detail-price {
-  text-align: right;  
+  text-align: right;
   font-size: 2rem;
   font-weight: bold;
   color: #2b5f2e;
@@ -322,7 +323,7 @@ h1, h2, h3, h4, h5, h6, p, button{
 }
 
 .product-farmer span {
-  color:#2b5f2e;
+  color: #2b5f2e;
 }
 
 .product-description {
@@ -357,7 +358,6 @@ h1, h2, h3, h4, h5, h6, p, button{
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
-
 
 /* For tablets and small laptops */
 @media (max-width: 768px) {
@@ -394,9 +394,6 @@ h1, h2, h3, h4, h5, h6, p, button{
   }
 }
 
-
-
-
 /* pre order form */
 .preorder-form {
   display: flex;
@@ -406,7 +403,7 @@ h1, h2, h3, h4, h5, h6, p, button{
   padding: 1rem;
   margin: 1rem;
   border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .preorder-form div {
@@ -446,30 +443,25 @@ h1, h2, h3, h4, h5, h6, p, button{
 
 .checkbox-container {
   display: flex;
-  flex-direction: row;       /* ✅ Lay children side by side */
-  align-items: flex-start;   /* ✅ Align checkbox with top of label */
-  gap: 10px;                 /* ✅ Space between checkbox and label */
+  flex-direction: row; /* ✅ Lay children side by side */
+  align-items: flex-start; /* ✅ Align checkbox with top of label */
+  gap: 10px; /* ✅ Space between checkbox and label */
   font-size: 1.1rem;
   font-weight: 600;
   color: #2b5f2e;
   line-height: 1.4;
 }
 
-
-.checkbox-container label{
+.checkbox-container label {
   display: inline;
   max-width: 70%;
 }
-
-
-
 
 .but-wrap {
   display: flex;
   justify-content: center;
   width: 100%;
 }
-
 
 .submit-btn {
   background-color: #fdfef6;
@@ -483,9 +475,8 @@ h1, h2, h3, h4, h5, h6, p, button{
   font-size: 1.5rem;
   margin: 0.5rem auto;
   width: 70%;
-  display: block;       /* 👈 required for margin auto to work */
+  display: block; /* 👈 required for margin auto to work */
 }
-
 
 /* to be planted */
 .to-be-planted {
@@ -495,32 +486,31 @@ h1, h2, h3, h4, h5, h6, p, button{
   margin-bottom: 1rem;
 }
 
-.to-be-planted i{
+.to-be-planted i {
   font-size: 5rem;
   color: #2b5f2e;
   padding-top: 10rem;
   margin: 0.5rem;
 }
 
-@media (max-width: 768px){
-  .to-be-planted h1{
+@media (max-width: 768px) {
+  .to-be-planted h1 {
     font-size: 1rem;
   }
-    .to-be-planted i{
+  .to-be-planted i {
     font-size: 2rem;
   }
 }
 /* ===overlay success====== */
 
-.success-overlay
- {
+.success-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   backdrop-filter: blur(5px);
-  background: rgba(0,0,0,0.3);
+  background: rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -529,13 +519,13 @@ h1, h2, h3, h4, h5, h6, p, button{
 
 .success-overlay-content {
   position: relative;
-  background: #fdf2d6; 
+  background: #fdf2d6;
   width: 70%;
   max-height: 80%;
   padding: 20px;
   border-radius: 12px;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -547,18 +537,16 @@ h1, h2, h3, h4, h5, h6, p, button{
   margin: 10%;
 }
 
-
-
 .success-overlay-content h2 {
   margin-bottom: 20px;
   color: #2b5f2e;
 }
 .overlay-title {
-  color:  #f9b534 !important;
+  color: #f9b534 !important;
   font-size: 2.5rem;
 }
 
-.overlay-text i{
+.overlay-text i {
   color: #2b5f2e;
 }
 .overlay-text p {
@@ -600,7 +588,6 @@ h1, h2, h3, h4, h5, h6, p, button{
   color: #f9b534;
 }
 
-
 /* ========== Mobile Sidebar Toggle ========== */
 .toggle-sidebar-btn {
   display: none;
@@ -632,10 +619,10 @@ h1, h2, h3, h4, h5, h6, p, button{
   .icon-block p {
     font-size: 0.8rem;
   }
-  .m-title{
+  .m-title {
     height: fit-content;
   }
-  .m-title h1{
+  .m-title h1 {
     padding: 0.5rem;
     font-size: 2rem;
   }
@@ -645,7 +632,7 @@ h1, h2, h3, h4, h5, h6, p, button{
     left: -500px;
     height: 100%;
     width: 250px;
-    background-color:#fdfef6;
+    background-color: #fdfef6;
     z-index: 1100;
     padding: 1rem;
     overflow-y: auto;
@@ -684,10 +671,10 @@ h1, h2, h3, h4, h5, h6, p, button{
     z-index: 1101;
   }
   .product-grid {
-      grid-template-columns: repeat(auto-fill, minmax(150px, 2fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 2fr));
   }
   .product-card {
-      width: 150px;
+    width: 150px;
   }
   .product-info h3,
   .product-info p {
@@ -743,8 +730,6 @@ h1, h2, h3, h4, h5, h6, p, button{
   }
 }
 
-
-
 /* For mobile phones */
 @media (max-width: 480px) {
   .detail-card {
@@ -796,12 +781,12 @@ h1, h2, h3, h4, h5, h6, p, button{
   }
 
   .product-grid {
-      grid-template-columns: repeat(auto-fill, minmax(120px, 2fr));
-      padding: 0;
-      gap: 0.9rem;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 2fr));
+    padding: 0;
+    gap: 0.9rem;
   }
   .product-card {
-      width: 120px;
-      gap: 0;
+    width: 120px;
+    gap: 0;
   }
 }
