@@ -1,6 +1,5 @@
-# agriTayo 🌱
+# agriTayo 
 
-## 📖 Description
 
 **agriTayo** is a React-based web application that connects consumers directly to local farmers by enabling pre-orders of fresh produce. Users can explore various farmers, view their available products, and place customized pre-orders with delivery or pickup options.
 
@@ -24,10 +23,9 @@ This project is built using:
 
 - **React** – Frontend library
 - **React Router DOM** – For routing between pages
-- **Font Awesome** – Icons used in the About section
-- **Custom CSS** – For styling and responsive design
 
-### File Highlights
+
+### 🗃 File Highlights
 
 - `HomePage.jsx` – Main landing page with farmer sidebar and product grid
 - `ProductCard.jsx` – Displays each product with image and pricing
@@ -42,7 +40,7 @@ This project is built using:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/maki-rollsushi/STARTer-Repo.git
+   git clone https://github.com/maki-rollsushi/agriTayo.git
    ```
 
 2. **Install dependencies:**
