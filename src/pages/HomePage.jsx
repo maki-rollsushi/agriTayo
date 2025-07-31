@@ -5,11 +5,15 @@ import { farmerData } from "../data/farmerData";
 import Hero from "../components/Hero";
 import About from "../components/About";
 
+// Main homepage component containing hero, about, and product catalog sections
 function HomePage() {
+  // State to track currently selected farmer and sidebar visibility
   const [selectedFarmer, setSelectedFarmer] = useState(farmerData[0]);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isToggleVisible, setIsToggleVisible] = useState(true); // Controls "Show Farmers" button
+  const [selectedProductName, setSelectedProductName] = useState("");
 
+  // Close the sidebar and re-enable the toggle button after a brief delay
   const handleCloseSidebar = () => {
     setIsSidebarOpen(false);
     setTimeout(() => {
@@ -17,11 +21,13 @@ function HomePage() {
     }, 120);
   };
 
+  // Open the sidebar and hide the toggle button
   const handleShowSidebar = () => {
     setIsSidebarOpen(true);
     setIsToggleVisible(false);
   };
 
+  // Add or remove a class to the body when the sidebar is toggled (for styling)
   useEffect(() => {
     if (isSidebarOpen) {
       document.body.classList.add("sidebar-open");
@@ -30,12 +36,14 @@ function HomePage() {
     }
   }, [isSidebarOpen]);
 
+  // Handle when a farmer is selected from the sidebar
   const handleFarmerSelect = (farmer) => {
     setSelectedFarmer(farmer);
     setIsSidebarOpen(false);
     handleCloseSidebar();
   };
 
+  // This returns the fully renderred Home Page of the Website
   return (
     <div className="fullpage-wrapper">
       <section id="hero">
@@ -57,7 +65,7 @@ function HomePage() {
                 <i className="fa-solid fa-bars"></i>
               </button>
             ) : (
-              <div className="toggle-placeholder" /> // empty div to reserve space
+              <div className="toggle-placeholder" />
             )}
           </div>
           <h1>Product Catalog</h1>
@@ -82,17 +90,25 @@ function HomePage() {
               farmers={farmerData}
               selectedFarmer={selectedFarmer}
               setSelectedFarmer={handleFarmerSelect}
+              selectedProductName={selectedProductName}
+              setSelectedProductName={setSelectedProductName}
             />
           </div>
           <div className="product-scroll-area">
             <div className="product-grid">
-              {selectedFarmer.products.map((product, idx) => (
-                <ProductCard
-                  key={idx}
-                  product={product}
-                  farmer={selectedFarmer}
-                />
-              ))}
+              {selectedFarmer.products
+                .filter((product) =>
+                  selectedProductName
+                    ? product.name === selectedProductName
+                    : true
+                )
+                .map((product, idx) => (
+                  <ProductCard
+                    key={idx}
+                    product={product}
+                    farmer={selectedFarmer}
+                  />
+                ))}
             </div>
           </div>
         </div>

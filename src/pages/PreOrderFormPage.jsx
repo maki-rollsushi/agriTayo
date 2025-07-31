@@ -81,7 +81,7 @@ function PreOrderFormPage() {
           </div>
         </div>
       </section>
-      <section id="pre-order-form">
+      <section id="pre-order-form" className="fill-up">
         <PreOrderCard productId={product.name} onSubmit={handleOrderSubmit} />
       </section>
     </div>

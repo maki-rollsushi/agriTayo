@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from "react";
 
-function FarmerSidebar({ farmers, selectedFarmer, setSelectedFarmer }) {
+function FarmerSidebar({
+  farmers,
+  selectedFarmer,
+  setSelectedFarmer,
+  selectedProductName,
+  setSelectedProductName,
+}) {
   const [selectedProvince, setSelectedProvince] = useState("");
-  const [selectedMunicipality, setSelectedMunicipality] = useState("");
+  const [selectedMunicipality, setSelectedMunicipality] = useState("");;
   const [filteredFarmers, setFilteredFarmers] = useState(farmers);
 
   // Unique Provinces
@@ -19,6 +25,20 @@ function FarmerSidebar({ farmers, selectedFarmer, setSelectedFarmer }) {
       ]
     : [];
 
+  // Available products from currently location-filtered farmers
+  const availableProducts = [
+    ...new Set(
+      farmers
+        .filter((f) => {
+          return (
+            (!selectedProvince || f.province === selectedProvince) &&
+            (!selectedMunicipality || f.municipality === selectedMunicipality)
+          );
+        })
+        .flatMap((f) => f.products.map((p) => p.name))
+    ),
+  ];
+
   // Update filtered farmers based on selection
   useEffect(() => {
     let filtered = farmers;
@@ -33,8 +53,14 @@ function FarmerSidebar({ farmers, selectedFarmer, setSelectedFarmer }) {
       );
     }
 
+    if (selectedProductName) {
+      filtered = filtered.filter((f) =>
+        f.products.some((p) => p.name === selectedProductName)
+      );
+    }
+
     setFilteredFarmers(filtered);
-  }, [selectedProvince, selectedMunicipality, farmers]);
+  }, [selectedProvince, selectedMunicipality, selectedProductName, farmers]);
 
   return (
     <div className="farmer-sidebar">
@@ -70,7 +96,21 @@ function FarmerSidebar({ farmers, selectedFarmer, setSelectedFarmer }) {
         ))}
       </select>
 
-      <h3 style={{ marginTop: "1rem" }}>Farmers:</h3>
+      <label>Product:</label>
+      <select
+        value={selectedProductName}
+        onChange={(e) => setSelectedProductName(e.target.value)}
+        disabled={availableProducts.length === 0}
+      >
+        <option value="">All Products</option>
+        {availableProducts.map((product) => (
+          <option key={product} value={product}>
+            {product}
+          </option>
+        ))}
+      </select>
+
+      <h3>Farmers:</h3>
       <div className="farmer-list">
         <ul>
           {filteredFarmers.length > 0 ? (
