@@ -1,4 +1,9 @@
-import "../styles/Header.css";
+/**
+ * Footer
+ *
+ * Displays the page footer with the site logo, social media icons,
+ * and a tagline. Used globally across the site layout.
+ */
 
 function Footer() {
   return (

@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from "react";
 
+/**
+ * FarmerSidebar
+ *
+ * Provides filters for province, municipality, and product to narrow down
+ * the list of farmers displayed. Updates the selected farmer when one is clicked.
+ * This component is used in the product catalog to help users explore by location or product.
+ */
+
 function FarmerSidebar({
   farmers,
   selectedFarmer,
@@ -8,10 +16,10 @@ function FarmerSidebar({
   setSelectedProductName,
 }) {
   const [selectedProvince, setSelectedProvince] = useState("");
-  const [selectedMunicipality, setSelectedMunicipality] = useState("");;
+  const [selectedMunicipality, setSelectedMunicipality] = useState("");
   const [filteredFarmers, setFilteredFarmers] = useState(farmers);
 
-  // Unique Provinces
+  // Unique Provinces from farmerData
   const provinces = [...new Set(farmers.map((f) => f.province))];
 
   // Municipalities based on selected province
@@ -39,7 +47,7 @@ function FarmerSidebar({
     ),
   ];
 
-  // Update filtered farmers based on selection
+  // Re-filter farmers when a filter (province, municipality, or product) changes.
   useEffect(() => {
     let filtered = farmers;
 
@@ -61,6 +69,12 @@ function FarmerSidebar({
 
     setFilteredFarmers(filtered);
   }, [selectedProvince, selectedMunicipality, selectedProductName, farmers]);
+
+  /**
+   * Render the sidebar UI:
+   * - Province, municipality, and product filters
+   * - Filtered list of farmers
+   */
 
   return (
     <div className="farmer-sidebar">

@@ -5,7 +5,18 @@ import { farmerData } from "../data/farmerData";
 import Hero from "../components/Hero";
 import About from "../components/About";
 
-// Main homepage component containing hero, about, and product catalog sections
+
+/**
+ * HomePage
+ * 
+ * Main landing page that includes:
+ * - Hero section
+ * - About section
+ * - Marketplace section with a sidebar for selecting farmers
+ *
+ * Users can browse products filtered by farmer and product name.
+ */
+
 function HomePage() {
   // State to track currently selected farmer and sidebar visibility
   const [selectedFarmer, setSelectedFarmer] = useState(farmerData[0]);

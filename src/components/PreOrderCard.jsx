@@ -1,5 +1,18 @@
 import { useState } from "react";
 
+/**
+ * PreOrderCard
+ * 
+ * Displays a form that allows users to submit a pre-order for a specific product.
+ * Includes validation for terms agreement and shows a success overlay after submission.
+ * 
+ * Props:
+ * - productId: ID of the product being ordered
+ * - onSubmit: function to handle form submission (receives form data + productId)
+ */
+
+
+
 function PreOrderCard({ productId, onSubmit }) {
   const [formData, setFormData] = useState({
     name: "",
