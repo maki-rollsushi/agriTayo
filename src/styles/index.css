@@ -102,9 +102,7 @@ button {
   background: #fdfef6;
   border-right: 1px solid #ccc;
   max-width: 300px;
-  padding: 20px;
-  margin: 20px;
-  margin-left: -10px;
+  margin: none;
 }
 
 .farmer-sidebar select {
@@ -139,11 +137,13 @@ button {
   padding: 0;
   max-height: 350px;
   overflow-y: auto;
+  margin-left: -35px;
+  text-align: center;
+  scrollbar-width: none;
 }
 
 .farmer-list ul {
   list-style: none;
-  text-align: left;
 }
 
 .farmer-item {
@@ -232,8 +232,14 @@ button {
   text-align: left;
   background-color: #fdfef6;
   min-height: 100vh;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.fill-up {
+  margin: 0 auto;
   width: 100%;
-  margin-top: 2rem;
+  padding: 0 1rem;
 }
 
 .return-a {
@@ -265,9 +271,10 @@ button {
 .form-container img {
   border-radius: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  height: 360px;
-  width: 360px;
+  height: 300px;
+  width: 300px;
 }
+
 .product-image-side {
   object-fit: cover;
   border-radius: 5px;
@@ -278,7 +285,7 @@ button {
 
 .product-info-block {
   flex: 1;
-  padding: 10px;
+  padding: 5px;
 }
 
 .product-title {
@@ -291,7 +298,7 @@ button {
   width: 100%;
   height: 2px;
   background-color: #2b5f2e;
-  margin: 10px 0;
+  margin: 5px 0;
 }
 
 .farmer-price {
@@ -299,27 +306,27 @@ button {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin: -1.5rem 0;
+  margin: -1.8rem 0;
   padding: 0;
 }
 
 .detail-price {
   text-align: right;
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: bold;
   color: #2b5f2e;
 }
 
 .detail-price span {
   color: #f9b536;
-  font-weight: normal;
-  font-size: small;
+  font-weight: 800;
+  font-size: 1rem;
 }
 
 .product-farmer {
   color: #f9b536;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1.7rem;
 }
 
 .product-farmer span {
@@ -362,7 +369,13 @@ button {
 /* For tablets and small laptops */
 @media (max-width: 768px) {
   .form-container img {
-    width: 250px;
+    width: 200px;
+    height: 200px;
+    margin: auto 1rem;
+    margin-top: 4rem !important;
+  }
+  .return-a {
+    margin-top: 10% !important;
   }
 
   .product-title {
@@ -371,6 +384,9 @@ button {
 
   .product-farmer {
     font-size: 1rem;
+  }
+  .farmer-price {
+    margin: 0;
   }
 
   .product-farmer span {
@@ -402,8 +418,9 @@ button {
   background-color: white;
   padding: 1rem;
   margin: 1rem;
-  border-radius: 20px;
+  border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 3rem;
 }
 
 .preorder-form div {
@@ -443,18 +460,25 @@ button {
 
 .checkbox-container {
   display: flex;
-  flex-direction: row; /* ✅ Lay children side by side */
-  align-items: flex-start; /* ✅ Align checkbox with top of label */
-  gap: 10px; /* ✅ Space between checkbox and label */
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
   font-size: 1.1rem;
   font-weight: 600;
   color: #2b5f2e;
   line-height: 1.4;
 }
 
+.checkbox-container input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+
 .checkbox-container label {
-  display: inline;
-  max-width: 70%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
 }
 
 .but-wrap {
@@ -472,9 +496,10 @@ button {
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  white-space: nowrap;
   font-size: 1.5rem;
   margin: 0.5rem auto;
-  width: 70%;
+  width: fit-content;
   display: block; /* 👈 required for margin auto to work */
 }
 
@@ -700,7 +725,7 @@ button {
 
   .submit-btn {
     justify-self: center;
-    width: 100%;
+    font-size: 1rem;
   }
 
   .product-card-large-horizontal {
@@ -739,6 +764,15 @@ button {
 
   .form-container img {
     width: 180px;
+    height: 180px;
+  }
+
+  .farmer-price {
+    margin: auto;
+  }
+  .detail-button {
+    display: block;
+    margin: 1rem auto 0;
   }
 
   .product-title {
@@ -746,6 +780,9 @@ button {
     text-align: center;
   }
 
+  .checkbox-container {
+    font-size: 0.75rem;
+  }
   .product-farmer {
     font-size: 1.2rem;
     text-align: center;
@@ -776,7 +813,7 @@ button {
   }
 
   .detail-button {
-    width: 100%;
+    margin: 0 auto;
     text-align: center;
   }
 

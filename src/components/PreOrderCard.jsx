@@ -151,7 +151,10 @@ function PreOrderCard({ productId, onSubmit }) {
       </div>
 
       <div className="checkbox-container">
-        <div>
+        <label
+          htmlFor="agree"
+          style={{ display: "flex", alignItems: "center", gap: "8px" }}
+        >
           <input
             type="checkbox"
             id="agree"
@@ -159,15 +162,12 @@ function PreOrderCard({ productId, onSubmit }) {
             checked={formData.agree}
             onChange={handleChange}
           />
-        </div>
-        <div>
-          <label htmlFor="agree">
-            I understand this is a pre-order and agree to the estimated delivery
-            window.
-          </label>
-        </div>
+          I understand this is a pre-order and agree to the estimated delivery
+          window.
+        </label>
       </div>
-      <div className="but-wwrap">
+
+      <div className="but-wrap">
         <button type="submit" className="submit-btn preorder-form-full">
           PLACE PRE-ORDER
         </button>
