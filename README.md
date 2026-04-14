@@ -4,7 +4,7 @@
 
 ---
 
-## 🎯 Purpose
+##  Purpose
 
 The goal of agriTayo is to:
 
@@ -16,13 +16,13 @@ The goal of agriTayo is to:
 
 ---
 
-## 🛠️ Build & Dependencies
+##  Build & Dependencies
 
 This project is built using:
 
 - **React** – Frontend library
 
-### 🗃 File Highlights
+###  File Highlights
 
 - `HomePage.jsx` – Main landing page with farmer sidebar and product grid
 - `ProductCard.jsx` – Displays each product with image and pricing
@@ -32,7 +32,7 @@ This project is built using:
 
 ---
 
-## ▶️ How to Run
+##  How to Run
 
 1. **Clone the repository:**
 
