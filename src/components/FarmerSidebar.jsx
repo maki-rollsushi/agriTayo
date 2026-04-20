@@ -1,11 +1,25 @@
 import React, { useState, useEffect } from "react";
 
-function FarmerSidebar({ farmers, selectedFarmer, setSelectedFarmer }) {
+/**
+ * FarmerSidebar
+ *
+ * Provides filters for province, municipality, and product to narrow down
+ * the list of farmers displayed. Updates the selected farmer when one is clicked.
+ * This component is used in the product catalog to help users explore by location or product.
+ */
+
+function FarmerSidebar({
+  farmers,
+  selectedFarmer,
+  setSelectedFarmer,
+  selectedProductName,
+  setSelectedProductName,
+}) {
   const [selectedProvince, setSelectedProvince] = useState("");
   const [selectedMunicipality, setSelectedMunicipality] = useState("");
   const [filteredFarmers, setFilteredFarmers] = useState(farmers);
 
-  // Unique Provinces
+  // Unique Provinces from farmerData
   const provinces = [...new Set(farmers.map((f) => f.province))];
 
   // Municipalities based on selected province
@@ -19,7 +33,21 @@ function FarmerSidebar({ farmers, selectedFarmer, setSelectedFarmer }) {
       ]
     : [];
 
-  // Update filtered farmers based on selection
+  // Available products from currently location-filtered farmers
+  const availableProducts = [
+    ...new Set(
+      farmers
+        .filter((f) => {
+          return (
+            (!selectedProvince || f.province === selectedProvince) &&
+            (!selectedMunicipality || f.municipality === selectedMunicipality)
+          );
+        })
+        .flatMap((f) => f.products.map((p) => p.name))
+    ),
+  ];
+
+  // Re-filter farmers when a filter (province, municipality, or product) changes.
   useEffect(() => {
     let filtered = farmers;
 
@@ -33,8 +61,20 @@ function FarmerSidebar({ farmers, selectedFarmer, setSelectedFarmer }) {
       );
     }
 
+    if (selectedProductName) {
+      filtered = filtered.filter((f) =>
+        f.products.some((p) => p.name === selectedProductName)
+      );
+    }
+
     setFilteredFarmers(filtered);
-  }, [selectedProvince, selectedMunicipality, farmers]);
+  }, [selectedProvince, selectedMunicipality, selectedProductName, farmers]);
+
+  /**
+   * Render the sidebar UI:
+   * - Province, municipality, and product filters
+   * - Filtered list of farmers
+   */
 
   return (
     <div className="farmer-sidebar">
@@ -70,7 +110,21 @@ function FarmerSidebar({ farmers, selectedFarmer, setSelectedFarmer }) {
         ))}
       </select>
 
-      <h3 style={{ marginTop: "1rem" }}>Farmers:</h3>
+      <label>Product:</label>
+      <select
+        value={selectedProductName}
+        onChange={(e) => setSelectedProductName(e.target.value)}
+        disabled={availableProducts.length === 0}
+      >
+        <option value="">All Products</option>
+        {availableProducts.map((product) => (
+          <option key={product} value={product}>
+            {product}
+          </option>
+        ))}
+      </select>
+
+      <h3>Farmers:</h3>
       <div className="farmer-list">
         <ul>
           {filteredFarmers.length > 0 ? (

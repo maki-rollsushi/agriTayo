@@ -1,13 +1,18 @@
-// components/Header.jsx
 import React from "react";
-import "../styles/Header.css";
+import logo from "../assets/logo.png";
+
+/**
+ * Header
+ * Displays the main site header with logo and navigation links.
+ * Includes anchors to About, Shop, and Help sections.
+ */
 
 function Header() {
   return (
     <header className="page-header">
       <div className="logo-title">
         <a href="/">
-          <img src="src/assets/logo.png" alt="Logo" className="logo-image" />
+          <img src={logo} alt="Logo" className="logo-image" />
         </a>
         <h1 className="site-title">
           {" "}

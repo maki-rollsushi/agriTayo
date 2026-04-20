@@ -1,9 +1,15 @@
-// pages/PreOrderFormPage.jsx
 import React, { useEffect } from "react";
 
 import { useParams, useLocation } from "react-router-dom";
 
 import PreOrderCard from "../components/PreOrderCard";
+
+/**
+ * PreOrderFormPage
+ *
+ * Displays detailed information for a selected product
+ * and renders a pre-order form for customers to place an order.
+ */
 
 function PreOrderFormPage() {
   const { productId } = useParams();
@@ -81,7 +87,7 @@ function PreOrderFormPage() {
           </div>
         </div>
       </section>
-      <section id="pre-order-form">
+      <section id="pre-order-form" className="fill-up">
         <PreOrderCard productId={product.name} onSubmit={handleOrderSubmit} />
       </section>
     </div>

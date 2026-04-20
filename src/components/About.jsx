@@ -1,6 +1,12 @@
 import React from "react";
-import "../styles/aboutStyle.css";
 import bgVideo from "../assets/bg_vid.mp4";
+
+/**
+ * About
+ *
+ * Renders the "About agriTayo!" section with
+ * a short description of the platform, and key value propositions.
+ */
 
 function About() {
   return (

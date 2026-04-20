@@ -1,4 +1,8 @@
-import "../styles/Hero.css";
+/**
+ * Hero
+ *
+ * Displays the homepage hero section with a strong message,
+ **/
 
 function Hero() {
   return (

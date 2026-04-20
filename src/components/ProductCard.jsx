@@ -1,6 +1,17 @@
-// ProductCard.jsx
 import React from "react";
 import { Link } from "react-router-dom";
+
+/**
+ * ProductCard
+ *
+ * Displays a clickable product card linking to the pre-order page.
+ * Receives a product and its corresponding farmer as props.
+ * Passes the data via React Router state.
+ *
+ * Props:
+ * - product: Object containing product details (name, imageUrl, pricePerKg, etc.)
+ * - farmer: Object containing the farmer's info related to the product
+ */
 
 function ProductCard({ product, farmer }) {
   return (
